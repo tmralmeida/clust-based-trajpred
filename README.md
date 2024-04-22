@@ -320,6 +320,7 @@ To plot the alignment between the original training and test sets and the synthe
 
 # Citation
 
+```
 @INPROCEEDINGS{10422479,
   author={de Almeida, Tiago Rodrigues and Mozos, Oscar Martinez},
   booktitle={2023 IEEE 26th International Conference on Intelligent Transportation Systems (ITSC)}, 
@@ -330,3 +331,4 @@ To plot the alignment between the original training and test sets and the synthe
   pages={1269-1276},
   keywords={Uncertainty;Clustering methods;Roads;Probabilistic logic;Generative adversarial networks;Trajectory;Proposals},
   doi={10.1109/ITSC57777.2023.10422479}}
+```
