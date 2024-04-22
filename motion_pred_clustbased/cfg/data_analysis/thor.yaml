@@ -1,0 +1,8 @@
+data : thor
+root_dir : motion_pred_clustbased/data/thor
+n_samples : 1000
+dataset : null
+skip : null
+min_ped : null
+
+hist_type : step_wise # [options] cnt_per_interval / input_frequency / step_wise / trip_length

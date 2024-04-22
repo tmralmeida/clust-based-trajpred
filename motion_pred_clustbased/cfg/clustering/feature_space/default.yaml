@@ -1,0 +1,42 @@
+data :
+  inputs : 
+    vect_dir : False
+    polar : False
+  output : vect_dir # [options] vect_dir / polar
+  test : True # testing 
+
+
+hyperparameters : 
+  max_epochs : 100
+  bs : 16 # batch size
+  g_lr : 1e-3 # learning rate of the generator optimizer
+  d_lr : 1e-3 # learning rate of the discriminator optimizer
+  g_step_size : 20 # step size for the scheduler of the generator's optimizer 
+  d_step_size : 10 # step size for the scheduler of the discrimnator's optimizer
+  g_nsteps : 1 #1 # number of steps generator
+  d_nsteps : 2 #5 # number of steps discriminator 
+  patience : 20 # wait until no improvement
+  val_freq : 2 # validation frequency
+  clip_thresh_g : 1.0
+  clip_thresh_d : 0.0 
+  l2_w : 2.0
+  adv_w : 1.0
+  fm : False # feature matching loss
+  variety:
+    n_preds : 1 # number of sampled predictions during test
+    k_value : 5 # number of sampled predictions during training (variety loss) 
+
+
+clustering : 
+  name :  kmeans_selfcondgan 
+  nsamples : 50000
+
+
+save :
+  best_metric : null # [options] ade / fde / dbi / sse / null
+  checkpoints : 100 # save every object each n epochs, if -1 does not save  
+  plots : True # save_plot with a sample of trajectories and confusion matrix, every val_freq 
+  objects : False
+  final_results : False # ade, fde, sse (for scgan)
+  path : motion_pred_clustbased # full_path saving
+

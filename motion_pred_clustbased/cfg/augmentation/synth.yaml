@@ -1,0 +1,2 @@
+type : synthetic # [options] synthetic / mixed / balanced
+mult : 1  # clustering distrbution multiplier 

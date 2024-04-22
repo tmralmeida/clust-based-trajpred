@@ -1,0 +1,26 @@
+extraction : 
+  root_dir : /home/tmr/Documents/PhD/My_PhD/code/datasets/argoverse
+  save_dir : motion_pred_clustbased/data/argoverse_bal/raw
+  sets : 
+    train : # sepcify n samples per class 
+      av : 1909 
+      agent : 1909
+      others : 1908
+    val :
+      av : 700
+      agent : 700
+      others : 700 
+    test :
+      av : 560
+      agent : 560
+      others : 558
+  
+
+preprocessing:
+  root_dir : motion_pred_clustbased/data/argoverse_bal/raw 
+  save_dir : motion_pred_clustbased/data/argoverse_bal/None
+
+
+data : argoverse
+obs_len : 20 # observation length
+pred_len : 30 # prediction length

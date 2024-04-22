@@ -1,0 +1,11 @@
+preprocessing:
+  root_dir : /home/tmr/Documents/PhD/My_PhD/code/datasets/benchmarks 
+  save_dir : motion_pred_clustbased/data/benchmark_s20/
+  skip : 20 # skip frames  
+  min_ped : 0 # number min of pedestrians in the same scene
+
+
+data : benchmark
+datasets : ["univ", "eth", "hotel", "zara1", "zara2"]
+obs_len : 8 # observation length
+pred_len : 12 # prediction length

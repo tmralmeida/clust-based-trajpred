@@ -1,0 +1,148 @@
+inherit_from : motion_pred_clustbased/cfg/training/default.yaml
+
+
+data :
+  dataset : benchmark
+  data_dir : motion_pred_clustbased/data/benchmark_s20
+  dataset_target : univ # specific testing dataset  
+  min_ped : 0
+  skip : 20
+  obs_len : 8 # number of observable time steps
+  pred_len : 12 # number of predicted time steps
+
+
+model : gan-clust-based
+
+
+clustering : 
+  inputs : vect_dir # [options] vect_dir / polar
+  algorithm : kmeans_selfcondgan # [options] k-means / k-shape / kmeans_selfcondgan
+  k-means : 
+    type : normal # [options] normal / time_series 
+    n_clusters : 5
+    init : k-means++ # [options] random / k-means++
+    metric : softdtw # [options] euclidean / dtw (available for time_series) / softdtw (available for time_series)
+    n_init : 10
+    max_iter : 300
+    n_jobs : -1
+  k-shape : 
+    n_clusters : 5
+    n_init : 10
+    max_iter : 300
+  kmeans_selfcondgan : 
+    clustering : 
+      burnin_time : 100 # wait until reclustering
+      recluster_every : 400 # iterations
+      nlabels : null
+      nsamples : 50000 
+      kwargs : 
+        n_clusters : 7
+        placeholder : null
+    generator :
+      condition_type : embedding # [options] embedding / one_hot -> condition types 
+      condition : 
+        train :  recognizer 
+        inference : recognizer 
+        samples : 20 # None or an integer samples during inference if centroids or neighbors type cond
+      pred_len : 19 # number of predicted time steps
+      emb_dim : 32
+      hid_dim : 64 # hidden dimension of the encoders and decoders
+      activ : prelu
+      drop : 0.2 # dropout probability
+      noise_dim : 8
+      noise_type : gaussian # [options] gaussian / uniform
+      net_type : lstm # [options] gru / lstm
+      state : hidden # [options] hidden / cell
+    discriminator :
+      condition_type : embedding # [options] embedding / one_hot -> condition types 
+      layer_ret_feat : fourth # options first/second/third/fourth/fifth
+      obs_len : 7 # excluding useless ts=0
+      pred_len : 12
+      emb_dim : 32
+      hid_dim : 128
+      activ : tanh
+      drop : 0.2 # dropout probability
+      net_type : ff # [options] gru / lstm / ff
+      state : hidden # [options] hidden / cell
+    hyperparameters : 
+      max_epochs : 100
+      bs : 64 # batch size
+      g_lr : 1e-3 # learning rate of the generator optimizer
+      d_lr : 1e-3 # learning rate of the discriminator optimizer
+      g_step_size : 20 # step size for the scheduler of the generator's optimizer 
+      d_step_size : 10 # step size for the scheduler of the discrimnator's optimizer
+      g_nsteps : 1 # number of steps generator
+      d_nsteps : 2 # number of steps discriminator 
+      patience : 20 # wait until no improvement
+      val_freq : 2 # validation frequency
+      clip_thresh_g : 1.0
+      clip_thresh_d : 0.0 
+      l2_w : 2.0
+      adv_w : 1.0
+      fm : False # feature matching loss
+      variety:
+        n_preds : 1 # number of sampled predictions during test
+        k_value : 1 # number of sampled predictions during training (variety loss) 
+    save :
+      best_metric : null # [options] ade / fde / dbi / sse / null
+      checkpoints : 100 # save every object each n epochs, if -1 does not save  
+      plots : False # save_plot with a sample of trajectories and confusion matrix, every val_freq 
+      objects : True
+      final_results : True # ade, fde, sse (for scgan)
+      path : motion_pred_clustbased # full_path saving
+
+
+cgan:
+  condition : 
+    train :  recognizer # training condition [options] centroids  / recognizer
+    inference : centroids # inference condition [options] centroids / neighbors-ds /  neighbors-fs
+    samples : 20 # None or an integer samples during inference if centroids or neighbors type cond
+  generator:
+    condition_type : embedding # [options] embedding / one_hot
+    pred_len : 12 # number of predicted time steps
+    emb_dim : 16
+    hid_dim : 64 # hidden dimension of the encoders and decoders
+    activ : prelu
+    drop : 0.2 # dropout probability
+    noise_dim : 8
+    noise_type : gaussian # [options] gaussian / uniform
+    net_type : lstm # [options] gru / lstm
+    state : hidden # [options] hidden / cell
+  discriminator:
+    condition_type : embedding # options: embedding, one_hot
+    obs_len : 7 # exclude useless ts = 0
+    pred_len : 12
+    emb_dim : 16
+    hid_dim : 64
+    activ : prelu
+    drop : 0.2 # dropout probability
+    net_type : ff # [options] gru / lstm, ff
+    state : hidden # [options] hidden, cell -> for lstm net_type
+  hyperparameters : 
+    max_epochs : 100
+    bs : 64 # batch size
+    patience : 20 # wait until no improvement
+    val_freq : 2 # validation frequency
+    g_lr : 1e-3 # learning rate of the generator optimizer
+    d_lr : 1e-3 # learning rate of the discriminator optimizer
+    g_step_size : 20 # step size for the scheduler of the generator's optimizer 
+    d_step_size : 10 # step size for the scheduler of the discrimnator's optimizer
+    g_nsteps : 1 # number of steps generator
+    d_nsteps : 2 # number of steps discriminator 
+    clip_thresh_g : 1.0
+    clip_thresh_d : 0.0 
+    l2_w : 2.0
+    adv_w : 1.0
+    fm : False # feature matching loss
+    variety:
+      n_preds : 3 # number of sampled predictions during test
+      k_value : 1 # number of sampled predictions during training (variety loss) 
+
+
+save :
+  best_metric : ade # [options] ade / fde 
+  checkpoints : 100 # save every object each n epochs, if -1 does not save  
+  plots : False # save_plot with a sample of trajectories and confusion matrix, every val_freq 
+  objects : True
+  final_results : True # ade, fde, sse (for scgan)
+  path : motion_pred_clustbased # full_path saving

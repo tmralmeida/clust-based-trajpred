@@ -1,0 +1,40 @@
+inherit_from : motion_pred_clustbased/cfg/training/default.yaml
+
+
+data :
+  dataset : thor
+  data_dir : motion_pred_clustbased/data/thor
+  dataset_target : None # specific testing dataset  
+  min_ped : None
+  skip : None
+  obs_len : 8 # number of observable time steps
+  pred_len : 12 # number of predicted time steps
+
+
+model : van-vae
+
+
+network :
+  emb_dim : 16
+  hid_dim : 64 # hidden dimension of the encoders and decoders
+  activ :  prelu # activation type
+  drop : 0.2 # dropout probability
+  noise_dim : 8
+  noise_type : gaussian # gaussian or uniform
+  pred_len : 12 # number of predicted time steps
+  net_type : lstm # [options] gru / lstm
+  state : hidden # [options] hidden / cell
+
+
+hyperparameters : 
+  lr : 1e-3 # learning rate for the optim more stable training
+  step_size : 20
+  l2_w : 2.0 # l2 loss weight
+  kl_w : 1.0 # kl loss weight
+  variety :
+    n_preds : 3 # number of sampled predictions during test
+    k_value : 3 # number of sampled predictions during training (variety loss) 
+
+
+save : 
+  best_metric : ade # [options] ade / fde

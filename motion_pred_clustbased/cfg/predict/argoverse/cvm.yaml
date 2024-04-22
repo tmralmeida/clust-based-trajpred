@@ -1,0 +1,12 @@
+inherit_from : motion_pred_clustbased/cfg/predict/default.yaml
+
+data :
+  dataset : argoverse
+  data_dir : motion_pred_clustbased/data/argoverse_bal
+  dataset_target : None # specific testing dataset  
+  min_ped : None
+  skip : None
+  obs_len : 20 # number of observable time steps
+  pred_len : 30 # number of predicted time steps
+  frequency: 10
+  downsample_rate : 1 # null for no downsampling

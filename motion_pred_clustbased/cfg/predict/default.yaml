@@ -1,0 +1,4 @@
+param :
+  meta :
+    v0_mode : linear # [options] gaussian / linear / constant
+    v0_sigma : 1.5 # # This is the sigma value to determine the v0 (i.e. velocity filtering) -> for gaussian v0_mode

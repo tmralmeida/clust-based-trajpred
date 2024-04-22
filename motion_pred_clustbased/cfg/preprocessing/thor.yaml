@@ -1,0 +1,8 @@
+preprocessing : 
+  root_dir : motion_pred_clustbased/data/thor/raw/ 
+  save_dir : motion_pred_clustbased/data/thor/None/
+
+
+data : thor
+obs_len : 8 # observation length
+pred_len : 12 # prediction length

@@ -1,0 +1,31 @@
+inherit_from : motion_pred_clustbased/cfg/training/default.yaml
+
+model : lstm # options gru lstm
+
+data :
+  dataset : benchmark
+  data_dir : motion_pred_clustbased/data/benchmark_s20
+  dataset_target : eth # specific testing dataset  
+  min_ped : 0
+  skip : 20
+  obs_len : 8 # number of observable time steps
+  pred_len : 12 # number of predicted time steps
+  test : True # testing 
+
+
+network :
+  state : hidden # [options] hidden / cell
+  obs_len : 8
+  pred_len : 12
+  emb_dim : 16
+  hid_dim : 64
+  mlp_dims :
+   - 32
+   - 16 
+  drop : 0.2
+  activ : prelu
+
+ 
+hyperparameters : 
+  lr : 1e-3 # learning rate for the optim more stable training
+  step_size : 20

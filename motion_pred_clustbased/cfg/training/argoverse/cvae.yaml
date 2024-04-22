@@ -1,0 +1,42 @@
+inherit_from : motion_pred_clustbased/cfg/training/default.yaml
+
+
+data :
+  dataset : argoverse
+  data_dir : motion_pred_clustbased/data/argoverse_bal
+  dataset_target : None # specific testing dataset  
+  min_ped : None
+  skip : None
+  obs_len : 20 # number of observable time steps
+  pred_len : 30 # number of predicted time steps
+
+
+model : sup-cvae
+
+
+network :
+  condition_type : embedding # [options] embedding / one_hot
+  n_labels : 3 # number of supervised labels -> workers, inspector, visitors
+  emb_dim : 16
+  hid_dim : 64 # hidden dimension of the encoders and decoders
+  activ :  prelu # activation type
+  drop : 0.2 # dropout probability
+  noise_dim : 8
+  noise_type : gaussian # gaussian or uniform
+  pred_len : 30 # number of predicted time steps
+  net_type : lstm # [options] gru / lstm
+  state : hidden # [options] hidden / cell
+
+
+hyperparameters : 
+  lr : 1e-3 # learning rate for the optim more stable training
+  step_size : 20
+  l2_w : 0.25 # l2 loss weight
+  kl_w : 1.0 # kl loss weight
+  variety :
+    n_preds : 1 # number of sampled predictions during test
+    k_value : 1 # number of sampled predictions during training (variety loss) 
+
+
+save : 
+  best_metric : ade # [options] ade / fde

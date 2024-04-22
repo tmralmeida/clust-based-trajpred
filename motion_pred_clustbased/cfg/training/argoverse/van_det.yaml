@@ -1,0 +1,30 @@
+inherit_from : motion_pred_clustbased/cfg/training/default.yaml
+
+model : lstm # options gru lstm
+
+data :
+  dataset : argoverse
+  data_dir : motion_pred_clustbased/data/argoverse_bal
+  dataset_target : None # specific testing dataset  
+  min_ped : None
+  skip : None
+  obs_len : 20 # number of observable time steps
+  pred_len : 30 # number of predicted time steps
+
+
+network :
+   state : hidden # [options] hidden / cell
+   obs_len : 19 # excluding useless ts = 0
+   pred_len : 30
+   emb_dim : 16
+   hid_dim : 64
+   mlp_dims :
+    - 32
+    - 16
+   drop : 0.2
+   activ : prelu
+
+ 
+hyperparameters : 
+  lr : 1e-3 # learning rate for the optim more stable training
+  step_size : 20

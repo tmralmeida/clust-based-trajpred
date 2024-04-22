@@ -1,0 +1,5 @@
+embeddings {
+  tensor_name: "feature space:00003"
+  metadata_path: "00003/feature space/metadata.tsv"
+  tensor_path: "00003/feature space/tensors.tsv"
+}

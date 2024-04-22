@@ -1,0 +1,13 @@
+inherit_from : motion_pred_clustbased/cfg/predict/default.yaml
+
+data :
+  dataset : thor
+  data_dir : motion_pred_clustbased/data/thor
+  dataset_target : null # specific testing dataset  
+  min_ped : null
+  skip : null
+  obs_len : 8 # number of observable time steps
+  pred_len : 12 # number of predicted time steps
+  frequency : 100
+  downsample_rate : 40 # null for no downsampling
+  

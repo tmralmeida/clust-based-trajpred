@@ -1,0 +1,20 @@
+data :
+  inputs :
+    vect_dir : True # dx, dy
+    polar : False # r, theta
+  output : vect_dir # [options] vect_dir / polar
+  test : True # testing 
+
+hyperparameters : 
+  max_epochs : 100
+  bs : 64 # batch size
+  patience : 20 # wait until no improvement
+  val_freq : 2 # validation frequency
+
+save :
+  best_metric : ade # [options] ade / fde / dbi / sse / null -> until last epoch
+  checkpoints : 100 # save every object each n epochs, if -1 does not save  
+  plots : False # save_plot with a sample of trajectories and confusion matrix, every val_freq 
+  objects : True
+  final_results : True # ade, fde, sse (for scgan)
+  path : motion_pred_clustbased # full_path saving

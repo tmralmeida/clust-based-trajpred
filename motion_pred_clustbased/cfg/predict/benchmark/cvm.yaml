@@ -1,0 +1,11 @@
+inherit_from : motion_pred_clustbased/cfg/predict/default.yaml
+
+data : 
+  dataset : benchmark
+
+  data_dir : motion_pred_clustbased/data/benchmark_s20 #human-traj-scgan/data/ # directory to the folders `eth` `hotel` `univ` `zara1` `zara2`
+  dataset_target : eth # specific testing dataset  
+  min_ped : 0
+  skip : 20
+  obs_len : 8 # number of observable time steps
+  pred_len : 12 # number of predicted time steps 

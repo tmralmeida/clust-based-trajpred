@@ -1,0 +1,165 @@
+embeddings {
+  tensor_name: "feature space:00000"
+  metadata_path: "00000/feature space/metadata.tsv"
+  tensor_path: "00000/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:00100"
+  metadata_path: "00100/feature space/metadata.tsv"
+  tensor_path: "00100/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:00200"
+  metadata_path: "00200/feature space/metadata.tsv"
+  tensor_path: "00200/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:00300"
+  metadata_path: "00300/feature space/metadata.tsv"
+  tensor_path: "00300/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:00400"
+  metadata_path: "00400/feature space/metadata.tsv"
+  tensor_path: "00400/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:00500"
+  metadata_path: "00500/feature space/metadata.tsv"
+  tensor_path: "00500/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:00600"
+  metadata_path: "00600/feature space/metadata.tsv"
+  tensor_path: "00600/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:00700"
+  metadata_path: "00700/feature space/metadata.tsv"
+  tensor_path: "00700/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:00800"
+  metadata_path: "00800/feature space/metadata.tsv"
+  tensor_path: "00800/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:00900"
+  metadata_path: "00900/feature space/metadata.tsv"
+  tensor_path: "00900/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01000"
+  metadata_path: "01000/feature space/metadata.tsv"
+  tensor_path: "01000/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01100"
+  metadata_path: "01100/feature space/metadata.tsv"
+  tensor_path: "01100/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01200"
+  metadata_path: "01200/feature space/metadata.tsv"
+  tensor_path: "01200/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01300"
+  metadata_path: "01300/feature space/metadata.tsv"
+  tensor_path: "01300/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01400"
+  metadata_path: "01400/feature space/metadata.tsv"
+  tensor_path: "01400/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01500"
+  metadata_path: "01500/feature space/metadata.tsv"
+  tensor_path: "01500/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01600"
+  metadata_path: "01600/feature space/metadata.tsv"
+  tensor_path: "01600/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01700"
+  metadata_path: "01700/feature space/metadata.tsv"
+  tensor_path: "01700/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01800"
+  metadata_path: "01800/feature space/metadata.tsv"
+  tensor_path: "01800/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:01900"
+  metadata_path: "01900/feature space/metadata.tsv"
+  tensor_path: "01900/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02000"
+  metadata_path: "02000/feature space/metadata.tsv"
+  tensor_path: "02000/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02100"
+  metadata_path: "02100/feature space/metadata.tsv"
+  tensor_path: "02100/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02200"
+  metadata_path: "02200/feature space/metadata.tsv"
+  tensor_path: "02200/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02300"
+  metadata_path: "02300/feature space/metadata.tsv"
+  tensor_path: "02300/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02400"
+  metadata_path: "02400/feature space/metadata.tsv"
+  tensor_path: "02400/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02500"
+  metadata_path: "02500/feature space/metadata.tsv"
+  tensor_path: "02500/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02600"
+  metadata_path: "02600/feature space/metadata.tsv"
+  tensor_path: "02600/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02700"
+  metadata_path: "02700/feature space/metadata.tsv"
+  tensor_path: "02700/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02800"
+  metadata_path: "02800/feature space/metadata.tsv"
+  tensor_path: "02800/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:02900"
+  metadata_path: "02900/feature space/metadata.tsv"
+  tensor_path: "02900/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:03000"
+  metadata_path: "03000/feature space/metadata.tsv"
+  tensor_path: "03000/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:03100"
+  metadata_path: "03100/feature space/metadata.tsv"
+  tensor_path: "03100/feature space/tensors.tsv"
+}
+embeddings {
+  tensor_name: "feature space:03200"
+  metadata_path: "03200/feature space/metadata.tsv"
+  tensor_path: "03200/feature space/tensors.tsv"
+}

@@ -1,0 +1,8 @@
+data : benchmark
+root_dir : motion_pred_clustbased/data/benchmark_s20
+n_samples : 1000
+dataset : univ
+skip : 20
+min_ped : 0
+
+hist_type : step_wise # [options] cnt_per_interval / input_frequency / step_wise / trip_length

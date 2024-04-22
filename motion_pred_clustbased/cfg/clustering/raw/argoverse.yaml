@@ -1,0 +1,8 @@
+inherit_from : motion_pred_clustbased/cfg/clustering/raw/default.yaml
+
+data :
+  dataset : argoverse
+  data_dir : motion_pred_clustbased/data/argoverse_bal
+  dataset_target : null # specific testing dataset 
+  skip : null
+  min_ped : null
