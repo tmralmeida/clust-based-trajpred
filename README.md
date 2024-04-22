@@ -3,7 +3,7 @@
 **augmentation branch can be updated at anytime**
 
 
-PyTorch(v1.12.0) implementation of "Likely, Light, and Accurate Context-Free Clusters-based Trajectory Prediction".
+PyTorch(v1.12.0) implementation of [Likely, Light, and Accurate Context-Free Clusters-based Trajectory Prediction](https://ieeexplore.ieee.org/abstract/document/10422479).
 
 
 ## Current status
